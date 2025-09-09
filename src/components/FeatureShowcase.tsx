@@ -43,7 +43,7 @@ const featureSections = [
       {
         icon: Settings,
         title: "Pricing Configuration",
-        content: ""You can configure the pricing table, including the price, name, description, interval, features and limits.",
+        content: "You can configure the pricing table, including the price, name, description, interval, features and limits.",
         defaultOpen: true
       },
       {
