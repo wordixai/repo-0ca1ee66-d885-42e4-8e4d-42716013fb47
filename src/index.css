@@ -2,17 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-The @apply directive should not be used with the group utility class.
-*/
-
 @layer base {
   :root {
-   
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142.4 71.8% 29.2%;
+    --radius: 0.5rem;
+    
+    /* Custom theme colors */
+    --highlight: 142 76% 36%;
+    --hero-gradient: linear-gradient(135deg, hsl(142 76% 36%), hsl(120 100% 25%));
   }
+}
 
-  .dark {
-
+/* Custom animations */
+@keyframes ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: var(--opacity-start, 0.24);
   }
+  100% {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-ripple {
+  animation: ripple 8s linear infinite;
+}
+
+.animate-marquee {
+  animation: marquee var(--duration, 20s) linear infinite;
+}
+
+/* Font families */
+.font-bricolage-grotesque {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+
+/* Custom gradients */
+.bg-hero-gradient {
+  background: var(--hero-gradient);
+}
+
+.highlight-text {
+  background: linear-gradient(135deg, hsl(142 76% 36%), hsl(120 100% 25%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
